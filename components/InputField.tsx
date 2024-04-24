@@ -4,6 +4,7 @@ interface InputFieldProps {
     type: string;
     placeholder: string;
     value: string;
+    style?: React.CSSProperties;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -11,6 +12,7 @@ export default function InputField({
     type,
     placeholder,
     value,
+    style,
     onChange,
 }: InputFieldProps) {
     return (
@@ -21,7 +23,8 @@ export default function InputField({
             spellCheck="false"
             autoComplete="off"
             value={value}
-            className="block max-w-lg w-[100%] bg-neutral-900 p-3 border-[1.5px] border-neutral-400 rounded-xl outline-none focus:border-neutral-000 bg-opacity-70 backdrop-blur-lg text-neutral-100 transition-all"
+            style={style}
+            className="block max-w-lg w-[100%] bg-neutral-900 p-3 border-[1.5px] border-neutral-400 rounded-xl outline-none focus:border-neutral-000 bg-opacity-70 backdrop-blur-lg text-neutral-100 transition-all tracking-wide"
         />
     );
 }

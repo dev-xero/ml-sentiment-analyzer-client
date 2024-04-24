@@ -1,13 +1,32 @@
 'use client';
 
+import Button from '@/components/Button';
 import Header from '@/components/Header';
 import InputField from '@/components/InputField';
 import TextBox from '@/components/TextBox';
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 export default function Home() {
     const [product, setProduct] = useState('');
     const [review, setReview] = useState('');
+    const [isPending, setIsPending] = useState(false);
+    const [buttonText, setButtonText] = useState(
+        isPending ? 'Analyzing...' : 'Analyze'
+    );
+
+    const togglePendingState = () => {
+        setIsPending((prev) => !prev);
+    };
+
+    const handlePredictSentiment = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
+        togglePendingState();
+        setTimeout(() => togglePendingState(), 1000);
+    };
+
+    useEffect(() => {
+        setButtonText(isPending ? 'Analyzing...' : 'Analyze');
+    }, [isPending]);
 
     return (
         <main className="w-[calc(100%-32px)] min-h-screen flex flex-col justify-center items-center m-4 py-8">
@@ -23,11 +42,17 @@ export default function Home() {
                     value={product}
                     onChange={(e) => setProduct(e.target.value)}
                 />
-                <div className="h-4"></div>
                 <TextBox
                     placeholder="Your review"
                     value={review}
                     onChange={(e) => setReview(e.target.value)}
+                    style={{ marginTop: '16px' }}
+                />
+                <Button
+                    text={buttonText}
+                    disabled={isPending}
+                    style={{ marginTop: '32px' }}
+                    onClick={handlePredictSentiment}
                 />
             </form>
         </main>
