@@ -11,12 +11,7 @@ export const metadata: Metadata = {
   description: "Sentiment Analysis using Machine Learning models.",
   icons: {
     shortcut: ['/favicon.svg']
-  },
- openGraph: {
-    title: "AI Sentiment Analyzer",
-    description: "Sentiment Analysis using Machine Learning models.",
-    images: ['/open-graph.png']
- }
+  }
 };
 
 export default function RootLayout({
