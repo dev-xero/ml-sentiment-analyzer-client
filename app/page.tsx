@@ -10,7 +10,7 @@ export default function Home() {
     const [review, setReview] = useState('');
 
     return (
-        <main className="w-[calc(100%-32px)] h-full flex flex-col justify-center align-center mx-4">
+        <main className="w-[calc(100%-32px)] h-[calc(100%-32px)] flex flex-col justify-center align-center m-4">
             <Header />
             <form
                 action="/"
