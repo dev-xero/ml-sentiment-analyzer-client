@@ -6,11 +6,11 @@ export default function Header() {
             <Image
                 src={'/icon-smiley.svg'}
                 alt={'Icon Smiley'}
-                width={64}
-                height={64}
-                className="mr-4"
+                width={32}
+                height={32}
+                className="mr-4 md:w-16 md:h-16"
             />
-            <h1 className="text-3xl font-bold">AI Sentiment Analyzer</h1>
+            <h1 className="text-xl md:text-3xl font-bold inline">AI Sentiment Analyzer</h1>
         </section>
     );
 }
