@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     color: #e0e0e0;
     background: #121316;
@@ -9,7 +13,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 @layer utilities {

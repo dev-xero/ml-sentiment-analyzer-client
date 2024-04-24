@@ -29,7 +29,7 @@ export default function Home() {
     }, [isPending]);
 
     return (
-        <main className="w-[calc(100%-32px)] min-h-screen flex flex-col justify-center items-center m-4 py-8">
+        <main className="w-full py-8 px-4">
             <Header />
             <form
                 action="/"

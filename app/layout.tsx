@@ -26,7 +26,7 @@ export const metadata: Metadata = {
         locale: 'en_US',
         type: 'website',
     },
-    metadataBase: new URL('https://ml-sentiment-analyzer.vercel.app')
+    metadataBase: new URL('https://ml-sentiment-analyzer.vercel.app'),
 };
 
 export default function RootLayout({
@@ -36,7 +36,11 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={manrope.className}>{children}</body>
+            <body
+                className={`${manrope.className} min-h-screen overflow-auto grid place-items-center`}
+            >
+                {children}
+            </body>
         </html>
     );
 }
