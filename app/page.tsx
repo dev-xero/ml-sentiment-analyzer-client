@@ -3,7 +3,7 @@
 import Header from '@/components/Header';
 import InputField from '@/components/InputField';
 import TextBox from '@/components/TextBox';
-import { ChangeEvent, useState } from 'react';
+import { useState } from 'react';
 
 export default function Home() {
     const [product, setProduct] = useState('');
