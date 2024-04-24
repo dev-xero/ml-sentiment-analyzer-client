@@ -9,6 +9,7 @@ const config: Config = {
     theme: {
         colors: {
             'neutral-500': '#E0E0E0',
+            'neutral-600': '#A6A8AA',
             'neutral-800': '#121316',
         },
     },
