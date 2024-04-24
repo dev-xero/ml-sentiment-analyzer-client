@@ -11,7 +11,7 @@ export default function Home() {
     const [review, setReview] = useState('');
     const [isPending, setIsPending] = useState(false);
     const [buttonText, setButtonText] = useState(
-        isPending ? 'Analyzing...' : 'Analyze'
+        isPending ? 'Analyzing' : 'Analyze'
     );
 
     const togglePendingState = () => {
@@ -25,7 +25,7 @@ export default function Home() {
     };
 
     useEffect(() => {
-        setButtonText(isPending ? 'Analyzing...' : 'Analyze');
+        setButtonText(isPending ? 'Analyzing' : 'Analyze');
     }, [isPending]);
 
     return (
