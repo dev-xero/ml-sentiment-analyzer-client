@@ -1,4 +1,4 @@
-<img src="/github/product.svg" />
+<img src="./github/product.svg" />
 
 # AI Sentiment Analyzer
 
