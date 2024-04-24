@@ -8,9 +8,9 @@ export default function Header() {
                 alt={'Icon Smiley'}
                 width={32}
                 height={32}
-                className="mr-4 md:w-16 md:h-16"
+                className="mr-3 md:mr-4 md:w-16 md:h-16"
             />
-            <h1 className="text-xl md:text-3xl font-bold inline">AI Sentiment Analyzer</h1>
+            <h1 className="text-2xl md:text-3xl font-bold inline">AI Sentiment Analyzer</h1>
         </section>
     );
 }
