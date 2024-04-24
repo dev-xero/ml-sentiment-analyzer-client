@@ -10,12 +10,12 @@ export default function Home() {
     const [review, setReview] = useState('');
 
     return (
-        <main className="w-[calc(100%-32px)] h-[calc(100%-32px)] flex flex-col justify-center align-center m-4">
+        <main className="w-[calc(100%-32px)] min-h-screen flex flex-col justify-center items-center m-4 py-8">
             <Header />
             <form
                 action="/"
                 method="POST"
-                className="mt-12 w-[100%] max-w-lg mx-auto"
+                className="mt-8 w-full max-w-lg mx-auto"
             >
                 <InputField
                     type="text"
