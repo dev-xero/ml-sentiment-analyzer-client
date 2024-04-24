@@ -13,7 +13,7 @@ export default function Button({ text, disabled, style, onClick }: ButtonProps) 
             onClick={onClick}
             disabled={disabled}
             style={style}
-            className="block max-w-lg w-[100%] px-4 py-3 rounded-xl outline-none transition-all font-bold bg-vibrant-green tracking-wide disabled:cursor-default disabled:bg-opacity-30 text-lg"
+            className="block max-w-lg w-[100%] px-4 py-3 rounded-xl outline-none transition-all font-bold bg-vibrant-green tracking-wide disabled:cursor-default disabled:bg-opacity-30 text-lg select-none"
         >
             {text}
         </button>

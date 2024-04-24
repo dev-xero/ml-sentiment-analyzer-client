@@ -21,7 +21,7 @@ export default function TextBox({
             autoComplete="off"
             value={value}
             style={style}
-            className="block max-w-lg w-[100%] bg-neutral-900 p-3 border-[1.5px] border-neutral-400 rounded-xl outline-none focus:border-neutral-000 bg-opacity-70 backdrop-blur-lg text-neutral-100 transition-all resize-y max-h-[200px] h-[120px] tracking-wide"
+            className="block max-w-lg w-[100%] bg-neutral-900 p-3 border-[1.5px] border-neutral-400 rounded-xl outline-none focus:border-vibrant-green bg-opacity-60 backdrop-blur-md text-neutral-100 transition-all resize-y max-h-[200px] min-h-[120px] h-[120px] tracking-wide"
         />
     );
 }
