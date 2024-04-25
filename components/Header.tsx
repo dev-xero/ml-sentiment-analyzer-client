@@ -16,7 +16,7 @@ export default function Header() {
                 </h1>
             </header>
             <p className="mt-4 text-center text-neutral-600 text-sm md:text-md">
-                This app runs on an ML model trained using Tensor Flow to
+                This app runs on an ML model trained using TensorFlow to
                 analyze product review sentiments.
             </p>
         </section>
