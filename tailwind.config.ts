@@ -14,7 +14,8 @@ const config: Config = {
             'neutral-600': '#A6A8AA',
             'neutral-800': '#121316',
             'neutral-900': '#050507',
-            'vibrant-green': '#00CB8E'
+            'vibrant-green': '#00CB8E',
+            'lighter-green': '#A2FDE2'
         },
     },
     plugins: [],

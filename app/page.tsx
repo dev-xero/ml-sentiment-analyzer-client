@@ -10,6 +10,7 @@ export default function Home() {
     const [product, setProduct] = useState('');
     const [review, setReview] = useState('');
     const [isPending, setIsPending] = useState(false);
+    const [isUnfit, setIsUnfit] = useState(false);
     const [buttonText, setButtonText] = useState(
         isPending ? 'Analyzing' : 'Analyze'
     );
@@ -20,8 +21,12 @@ export default function Home() {
 
     const handlePredictSentiment = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
-        togglePendingState();
-        setTimeout(() => togglePendingState(), 1000);
+        setIsUnfit(true);
+        if (product != '' && review != '') {
+            setIsUnfit(false);
+            togglePendingState();
+            setTimeout(() => togglePendingState(), 1000);
+        }
     };
 
     useEffect(() => {
@@ -40,14 +45,25 @@ export default function Home() {
                     type="text"
                     placeholder="Product"
                     value={product}
-                    onChange={(e) => setProduct(e.target.value)}
+                    onChange={(e) => {
+                        setIsUnfit(false);
+                        setProduct(e.target.value);
+                    }}
                 />
                 <TextBox
                     placeholder="Your review"
                     value={review}
-                    onChange={(e) => setReview(e.target.value)}
+                    onChange={(e) => {
+                        setIsUnfit(false);
+                        setReview(e.target.value);
+                    }}
                     style={{ marginTop: '16px' }}
                 />
+                {isUnfit && (
+                    <p className="text-lighter-green text-sm w-full mx-auto text-center mt-4 font-medium tracking-wide">
+                        *Please fill both product and review fields.
+                    </p>
+                )}
                 <Button
                     text={buttonText}
                     disabled={isPending}
