@@ -24,7 +24,7 @@ export default function InputField({
             autoComplete="off"
             value={value}
             style={style}
-            className="block max-w-lg w-[100%] bg-neutral-900 p-3 border-[1.5px] border-neutral-400 rounded-xl outline-none focus:border-vibrant-green bg-opacity-60 backdrop-blur-lg text-neutral-100 transition-all tracking-wide"
+            className="block max-w-lg w-[100%] bg-neutral-900 p-3 border-[1.5px] border-neutral-400 rounded-xl outline-none focus:border-vibrant-orange bg-opacity-60 backdrop-blur-lg text-neutral-100 transition-all tracking-wide"
         />
     );
 }

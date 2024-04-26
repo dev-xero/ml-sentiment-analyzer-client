@@ -20,7 +20,7 @@ export default function Button({
             onClick={onClick}
             disabled={disabled}
             style={style}
-            className="flex justify-center items-center max-w-lg w-[100%] px-4 h-12 rounded-xl outline-none transition-all font-bold bg-vibrant-green tracking-wide disabled:cursor-default disabled:bg-opacity-50 text-lg select-none text-neutral-000"
+            className="flex justify-center items-center max-w-lg w-[100%] px-4 h-12 rounded-xl outline-none transition-all font-bold bg-vibrant-orange tracking-wide disabled:cursor-default disabled:bg-opacity-50 text-lg select-none text-neutral-000"
         >
             {disabled && (
                 <div className="w-12 max-w-12 h-12 max-h-12 ml-[-24px]">

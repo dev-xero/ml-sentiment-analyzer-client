@@ -60,7 +60,7 @@ export default function Home() {
                     style={{ marginTop: '16px' }}
                 />
                 {isUnfit && (
-                    <p className="text-lighter-green text-sm w-full mx-auto text-center mt-4 font-medium tracking-wide">
+                    <p className="text-lighter-orange text-sm w-full mx-auto text-center mt-4 font-medium tracking-wide">
                         *Please fill both product and review fields.
                     </p>
                 )}
