@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react"
 import type { Metadata } from 'next';
 import { Manrope } from 'next/font/google';
 import './globals.css';
@@ -40,6 +41,7 @@ export default function RootLayout({
                 className={`${manrope.className} min-h-screen overflow-auto grid place-items-center`}
             >
                 {children}
+                <Analytics />
             </body>
         </html>
     );
