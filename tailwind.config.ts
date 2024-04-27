@@ -9,11 +9,12 @@ const config: Config = {
     theme: {
         colors: {
             'neutral-000': '#FFFFFF',
-            'neutral-400': '#2D2D35',
+            'neutral-200': '#BAADAB',
+            'neutral-400': '#4F423C',
             'neutral-500': '#E0E0E0',
-            'neutral-600': '#A6A8AA',
+            'neutral-600': '#D0C3BE',
             'neutral-800': '#121316',
-            'neutral-900': '#050507',
+            'neutral-900': '#110908',
             'vibrant-orange': '#F77B35',
             'lighter-orange': '#EAC2B1'
         },
