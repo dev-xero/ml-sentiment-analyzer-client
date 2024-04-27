@@ -25,18 +25,26 @@ export default function Home() {
     ) => {
         e.preventDefault();
         setIsUnfit(true);
+        togglePendingState();
         if (product != '' && review != '') {
             setIsUnfit(false);
             try {
-                togglePendingState();
-                const res = await fetch(API);
+                const res = await fetch(`${API}/analyze`, {
+                    mode: 'cors',
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ review }),
+                });
                 const data = await res.json();
                 console.log(data);
             } catch (e) {
-                togglePendingState();
                 console.error('An error occurred.');
                 console.error(e);
+            } finally {
+                togglePendingState();
             }
+        } else {
+            togglePendingState();
         }
     };
 
