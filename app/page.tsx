@@ -5,6 +5,7 @@ import Header from '@/components/Header';
 import InputField from '@/components/InputField';
 import TextBox from '@/components/TextBox';
 import React, { useEffect, useState } from 'react';
+import { API } from '@/utils/constants';
 
 export default function Home() {
     const [product, setProduct] = useState('');
@@ -19,13 +20,23 @@ export default function Home() {
         setIsPending((prev) => !prev);
     };
 
-    const handlePredictSentiment = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const handlePredictSentiment = async (
+        e: React.MouseEvent<HTMLButtonElement>
+    ) => {
         e.preventDefault();
         setIsUnfit(true);
         if (product != '' && review != '') {
             setIsUnfit(false);
-            togglePendingState();
-            setTimeout(() => togglePendingState(), 1000);
+            try {
+                togglePendingState();
+                const res = await fetch(API);
+                const data = await res.json();
+                console.log(data);
+            } catch (e) {
+                togglePendingState();
+                console.error('An error occurred.');
+                console.error(e);
+            }
         }
     };
 
