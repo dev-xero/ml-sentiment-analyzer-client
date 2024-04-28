@@ -40,11 +40,9 @@ export default function Home() {
                 });
                 const data = await res.json();
                 console.log(data);
-                const sentiment = data.payload;
-                if (parseInt(sentiment)) {
-                    setSentiment(parseInt(sentiment));
-                    setIsModalVisible(true);
-                }
+
+                setSentiment(parseInt(data.payload));
+                setIsModalVisible(true);
             } catch (e) {
                 console.error('An error occurred.');
                 console.error(e);
