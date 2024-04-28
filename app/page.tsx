@@ -6,12 +6,14 @@ import InputField from '@/components/InputField';
 import TextBox from '@/components/TextBox';
 import React, { useEffect, useState } from 'react';
 import { API } from '@/utils/constants';
+import SentimentModal from '@/components/SentimentModal';
 
 export default function Home() {
     const [product, setProduct] = useState('');
     const [review, setReview] = useState('');
     const [isPending, setIsPending] = useState(false);
     const [isUnfit, setIsUnfit] = useState(false);
+    const [modalVisible, setModalVisible] = useState(false);
     const [buttonText, setButtonText] = useState(
         isPending ? 'Analyzing' : 'Analyze'
     );
@@ -53,43 +55,51 @@ export default function Home() {
     }, [isPending]);
 
     return (
-        <main className="w-full py-8 px-4">
-            <Header />
-            <form
-                action="/"
-                method="POST"
-                className="mt-8 w-full max-w-lg mx-auto"
-            >
-                <InputField
-                    type="text"
-                    placeholder="Product"
-                    value={product}
-                    onChange={(e) => {
-                        setIsUnfit(false);
-                        setProduct(e.target.value);
-                    }}
+        <>
+            {true && (
+                <SentimentModal
+                    sentiment={0}
+                    product={product.length > 0 ? product : 'Nintendo Switch'}
                 />
-                <TextBox
-                    placeholder="Your review"
-                    value={review}
-                    onChange={(e) => {
-                        setIsUnfit(false);
-                        setReview(e.target.value);
-                    }}
-                    style={{ marginTop: '16px' }}
-                />
-                {isUnfit && (
-                    <p className="text-lighter-orange text-sm w-full mx-auto text-center mt-4 font-medium tracking-wide">
-                        *Please fill both product and review fields.
-                    </p>
-                )}
-                <Button
-                    text={buttonText}
-                    disabled={isPending}
-                    style={{ marginTop: '32px' }}
-                    onClick={handlePredictSentiment}
-                />
-            </form>
-        </main>
+            )}
+            <main className="w-full py-8 px-4">
+                <Header />
+                <form
+                    action="/"
+                    method="POST"
+                    className="mt-8 w-full max-w-lg mx-auto"
+                >
+                    <InputField
+                        type="text"
+                        placeholder="Product"
+                        value={product}
+                        onChange={(e) => {
+                            setIsUnfit(false);
+                            setProduct(e.target.value);
+                        }}
+                    />
+                    <TextBox
+                        placeholder="Your review"
+                        value={review}
+                        onChange={(e) => {
+                            setIsUnfit(false);
+                            setReview(e.target.value);
+                        }}
+                        style={{ marginTop: '16px' }}
+                    />
+                    {isUnfit && (
+                        <p className="text-lighter-orange text-sm w-full mx-auto text-center mt-4 font-medium tracking-wide">
+                            *Please fill both product and review fields.
+                        </p>
+                    )}
+                    <Button
+                        text={buttonText}
+                        disabled={isPending}
+                        style={{ marginTop: '32px' }}
+                        onClick={handlePredictSentiment}
+                    />
+                </form>
+            </main>
+        </>
     );
 }

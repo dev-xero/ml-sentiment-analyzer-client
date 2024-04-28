@@ -16,7 +16,12 @@ const config: Config = {
             'neutral-800': '#121316',
             'neutral-900': '#110908',
             'vibrant-orange': '#F77B35',
-            'lighter-orange': '#EAC2B1'
+            'lighter-orange': '#EAC2B1',
+            'dark-bg': '#140D0C',
+            'modal-border': '#352F2D',
+            'reaction-green': '#1DEC7C',
+            'reaction-yellow': '#EBBF4C',
+            'reaction-red': '#EB4C4C',
         },
     },
     plugins: [],

@@ -6,6 +6,11 @@
     box-sizing: border-box;
 }
 
+*::selection {
+    background-color: #F77B35;
+    color: #FFFFFF;
+}
+
 body {
     color: #e0e0e0;
     background: #121316;
