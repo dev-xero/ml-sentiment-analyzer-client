@@ -58,7 +58,7 @@ export default function Home() {
         <>
             {true && (
                 <SentimentModal
-                    sentiment={0}
+                    sentiment={1}
                     product={product.length > 0 ? product : 'Nintendo Switch'}
                 />
             )}
