@@ -13,7 +13,8 @@ export default function Home() {
     const [review, setReview] = useState('');
     const [isPending, setIsPending] = useState(false);
     const [isUnfit, setIsUnfit] = useState(false);
-    const [modalVisible, setModalVisible] = useState(false);
+    const [isModalVisible, setIsModalVisible] = useState(false);
+    const [sentiment, setSentiment] = useState(1);
     const [buttonText, setButtonText] = useState(
         isPending ? 'Analyzing' : 'Analyze'
     );
@@ -39,6 +40,11 @@ export default function Home() {
                 });
                 const data = await res.json();
                 console.log(data);
+                const sentiment = data.payload;
+                if (parseInt(sentiment)) {
+                    setSentiment(parseInt(sentiment));
+                    setIsModalVisible(true);
+                }
             } catch (e) {
                 console.error('An error occurred.');
                 console.error(e);
@@ -56,10 +62,11 @@ export default function Home() {
 
     return (
         <>
-            {true && (
+            {isModalVisible && (
                 <SentimentModal
-                    sentiment={1}
-                    product={product.length > 0 ? product : 'Nintendo Switch'}
+                    sentiment={sentiment}
+                    product={product}
+                    onCloseClicked={() => setIsModalVisible(false)}
                 />
             )}
             <main className="w-full py-8 px-4">
