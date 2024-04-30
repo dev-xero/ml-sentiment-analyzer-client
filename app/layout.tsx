@@ -19,7 +19,7 @@ export const metadata: Metadata = {
         url: 'https://ml-sentiment-analyzer.vercel.app',
         images: [
             {
-                url: 'https://ml-sentiment-analyzer.vercel.app/opengraph-image.png',
+                url: '/opengraph-image.png',
                 width: 1200,
                 height: 630,
             },
