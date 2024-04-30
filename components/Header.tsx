@@ -11,13 +11,18 @@ export default function Header() {
                     height={32}
                     className="mr-3 md:mr-4 md:w-12 md:h-12"
                 />
-                <h1 className="text-xl md:text-2xl lg:text-3xl font-bold inline text-center">
-                    AI Sentiment Analyzer
-                </h1>
+                <div className="mt-[-16px]">
+                    <span className="text-xs font-bold block text-vibrant-orange w-full text-right">
+                        BETA
+                    </span>
+                    <h1 className="text-xl md:text-2xl lg:text-3xl font-bold inline text-center">
+                        AI Sentiment Analyzer
+                    </h1>
+                </div>
             </header>
             <p className="mt-4 text-center text-neutral-600 text-sm md:text-md">
-                This app runs on an ML model trained using TensorFlow to
-                analyze product review sentiments.
+                This app runs on an ML model trained using TensorFlow to analyze
+                product review sentiments.
             </p>
         </section>
     );
