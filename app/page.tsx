@@ -23,6 +23,20 @@ export default function Home() {
         setIsPending((prev) => !prev);
     };
 
+    const getPrediction = async () => {
+        const res = await fetch(`${API}/analyze`, {
+            mode: 'cors',
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ review }),
+        });
+        const data = await res.json();
+        console.log(data);
+
+        setSentiment(parseInt(data.payload));
+        setIsModalVisible(true);
+    };
+
     const handlePredictSentiment = async (
         e: React.MouseEvent<HTMLButtonElement>
     ) => {
@@ -32,20 +46,9 @@ export default function Home() {
         if (product != '' && review != '') {
             setIsUnfit(false);
             try {
-                const res = await fetch(`${API}/analyze`, {
-                    mode: 'cors',
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ review }),
-                });
-                const data = await res.json();
-                console.log(data);
-
-                setSentiment(parseInt(data.payload));
-                setIsModalVisible(true);
+                await getPrediction();
             } catch (e) {
-                console.error('An error occurred.');
-                console.error(e);
+                console.error('An error occurred.\nError:', e);
             } finally {
                 togglePendingState();
             }
